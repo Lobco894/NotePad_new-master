@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@android:color/transparent"
+    android:layout_height="match_parent">
+
+    <!-- 第一个 TextView，内容居中 -->
+    <TextView
+        android:id="@android:id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+        android:text="TextView"
+        android:textSize="30dp"/>
+
+    <!-- 包裹第二个 TextView 的父容器 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end|bottom">
+
+        <!-- 第二个 TextView，宽度为一半 -->
+        <TextView
+            android:id="@+id/timetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#D8D8D8"
+            android:gravity="right"
+            android:text="timecurrent"
+            android:textColor="#6F6F6F"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#E3E3E3" />
+</LinearLayout>

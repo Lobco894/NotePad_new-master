@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#f1f1f1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="无" />
+
+    <TextView
+        android:id="@+id/bg1Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="红色云纹1" />
+
+    <TextView
+        android:id="@+id/bg2Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="红色云纹2" />
+
+    <TextView
+        android:id="@+id/bg3Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="茶白" />
+
+    <TextView
+        android:id="@+id/bg4Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="崖" />
+
+    <TextView
+        android:id="@+id/bg5Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="竹青" />
+
+    <TextView
+        android:id="@+id/bg6Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="丸子" />
+
+</LinearLayout>

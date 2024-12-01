@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#e1e1e1"
+    android:elevation="8dp"
+    android:layout_gravity="bottom"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:text="纸张风格" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/colorWhite"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:background="@drawable/colorwhite"
+            android:src="@drawable/chooseicon" />
+
+        <ImageButton
+            android:id="@+id/colorone"
+            android:layout_width="60dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:background="@drawable/colorone"
+            android:src="@null" />
+
+        <ImageButton
+            android:id="@+id/colortwo"
+            android:layout_width="60dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:background="@drawable/colortwo"
+            android:src="@null" />
+
+        <ImageButton
+            android:id="@+id/colorthree"
+            android:layout_width="60dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:background="@drawable/colorthree"
+            android:src="@null" />
+
+        <ImageButton
+            android:id="@+id/colorfour"
+            android:layout_width="60dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:background="@drawable/colorfour"
+            android:src="@null" />
+
+    </LinearLayout>
+</LinearLayout>
