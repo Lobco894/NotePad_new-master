@@ -74,59 +74,181 @@ private static final String[] PROJECTION = new String[] {
 ![](./001.png)
 
 ### 搜索笔记功能
+
+首先在`home.xml`中添加搜索框的显示，我采用了一个`imagebutton`作为搜索按钮，点击以后显示`edittext`作为搜索框
+
+搜索按钮
+
+```
+        <ImageButton
+            android:id="@+id/searchbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:contentDescription="@null"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/search_gray" />
+```
+
+搜索框，通过`android:visibility="gone"`初始设置为隐藏
+
+```
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="请输入搜索内容"
+            android:padding="10dp"
+            android:visibility="gone" />
+```
+
+再添加一个搜索框返回的按钮
+
+```
+        <ImageButton
+            android:id="@+id/searchBackBtn"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:contentDescription="@null"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/back"
+            android:visibility="gone" />
+```
+
+在`NotesList.java`添加组件的初始化，每个组件的功能实现都需要显初始化，类似如此，之后不再赘述
+
+```
+        final ImageButton searchButton = (ImageButton) findViewById(R.id.searchbtn);
+        final TextView searchEditText = (TextView) findViewById(R.id.search);
+        final ImageButton closeSearchButton = (ImageButton) findViewById(R.id.searchBackBtn);
+```
+
+点击搜索按钮，显示输入框
+
+```
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchEditText.setVisibility(View.VISIBLE);  // 显示输入框
+                closeSearchButton.setVisibility(View.VISIBLE);
+                findViewById(R.id.title).setVisibility(View.GONE);
+                anb.setVisibility(View.GONE);
+                searchButton.setVisibility(View.GONE);     // 隐藏搜索按钮
+            }
+        });
+```
+
+点击关闭按钮，隐藏输入框并恢复搜索按钮
+
+```
+closeSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchEditText.setVisibility(View.GONE);  // 隐藏输入框
+                closeSearchButton.setVisibility(View.GONE);
+                findViewById(R.id.title).setVisibility(View.VISIBLE);
+                anb.setVisibility(View.VISIBLE);
+                searchButton.setVisibility(View.VISIBLE);  // 恢复搜索按钮
+            }
+        });
+```
+
+设置输入框内容变化时进行搜索
+
+```
+searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                // 当输入框内容发生变化时，进行搜索
+                String query = searchEditText.getText().toString();
+                performSearch(query);  // 调用搜索功能
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+```
+
+搜索功能实现
+
+```
+    private void performSearch(String query) {
+        Cursor cursor = managedQuery(
+                NotePad.Notes.CONTENT_URI,
+                PROJECTION,
+                NotePad.Notes.COLUMN_NAME_TITLE + " LIKE ?",
+                new String[]{"%" + query + "%"},
+                NotePad.Notes.DEFAULT_SORT_ORDER
+        );
+
+        SimpleCursorAdapter adapter = (SimpleCursorAdapter) getListAdapter();
+        adapter.changeCursor(cursor);
+    }
+```
+
+
 点击搜索按钮，跳出搜索框，根据输入在内容中模糊查找相应的笔记。
 
-![](./001.png)
-![](./001.png)
-![](./001.png)
+![](./002.png)
+![](./003.png)
+![](./004.png)
 
 ### 笔记 UI 美化
 去除了原始界面的交互组件，更改为更加美观的外表。
 
 **原始 UI**
 
-![](./001.png)  
+![](./005.png)  
 
 **美化后 UI**
 
-![](./001.png)
+![](./006.png)
 
 ### 笔记导出功能
 在笔记编辑界面的选项中，可以选择笔记导出功能。
 
-![](./001.png)
-![](./001.png)
-![](./001.png)
+![](./007.png)
+![](./008.png)
+![](./009.png)
 
 输入文件名后可以选择保存的位置。如果输入为空会出现提示，保存成功后也有提示。
 
-![](./001.png)
-![](./001.png)
-![](./001.png)
+![](./010.png)
+![](./011.png)
+![](./012.png)
 
 ### 偏好设置
 点击右上角选项功能，可以出现多种背景风格。
 
-![](./001.png)
-![](./001.png)
-![](./001.png)
-![](./001.png)
+![](./013.png)
+![](./014.png)
+![](./015.png)
+![](./016.png)
 
 在笔记编辑界面可以选择字体样式。
 
-![](./001.png)
-![](./001.png)
-![](./001.png)
-![](./001.png)
+![](./017.png)
+![](./018.png)
+![](./019.png)
+![](./020.png)
 
 在笔记编辑界面还可以选择背景颜色。
 
-![](./001.png)
-![](./001.png)
-![](./001.png)
+![](./021.png)
+![](./022.png)
+![](./023.png)
 
 ### 字数显示
 实时显示该笔记的总字数。
 
-![](./001.png)
+![](./024.png)
 
