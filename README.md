@@ -71,7 +71,7 @@ private static final String[] PROJECTION = new String[] {
 
 右下角显示笔记更新时间，并且根据更新时间来对笔记列表进行排列，便于用户方便快捷地了解笔记的相关信息。
 
-![](./001.png)
+![](./p/001.png)
 
 ### 搜索笔记功能
 
@@ -198,9 +198,9 @@ searchEditText.addTextChangedListener(new TextWatcher() {
 
 点击搜索按钮，跳出搜索框，根据输入在内容中模糊查找相应的笔记。
 
-![](./002.png)
-![](./003.png)
-![](./004.png)
+![](./p/002.png)
+![](./p/003.png)
+![](./p/004.png)
 
 # 笔记 UI 美化
 
@@ -229,11 +229,11 @@ searchEditText.addTextChangedListener(new TextWatcher() {
 
 **原始 UI**
 
-![](./005.png)  
+![](./p/005.png)  
 
 **美化后 UI**
 
-![](./006.png)
+![](./p/006.png)
 
 # 笔记背景颜色切换
 
@@ -314,9 +314,9 @@ searchEditText.addTextChangedListener(new TextWatcher() {
 
 在笔记编辑界面可以选择多种背景颜色。
 
-![](./021.png)
-![](./022.png)
-![](./023.png)
+![](./p/021.png)
+![](./p/022.png)
+![](./p/023.png)
 
 # 主页风格切换
 
@@ -358,10 +358,10 @@ popupView.findViewById(R.id.bg1Btn).setOnClickListener(new View.OnClickListener(
 
 点击右上角选项功能，可以切换多种背景风格。
 
-![](./013.png)
-![](./014.png)
-![](./015.png)
-![](./016.png)
+![](./p/013.png)
+![](./p/014.png)
+![](./p/015.png)
+![](./p/016.png)
 
 # 字体样式切换
 
@@ -409,10 +409,10 @@ popupView.findViewById(R.id.bg1Btn).setOnClickListener(new View.OnClickListener(
 
 在笔记编辑界面可以选择字体样式。
 
-![](./017.png)
-![](./018.png)
-![](./019.png)
-![](./020.png)
+![](./p/017.png)
+![](./p/018.png)
+![](./p/019.png)
+![](./p/020.png)
 
 # 字数显示
 
@@ -460,7 +460,7 @@ popupView.findViewById(R.id.bg1Btn).setOnClickListener(new View.OnClickListener(
 
 实时显示该笔记的总字数。
 
-![](./024.png)
+![](./p/024.png)
 
 ### 笔记导出功能
 
@@ -566,15 +566,15 @@ popupView.findViewById(R.id.bg1Btn).setOnClickListener(new View.OnClickListener(
 
 在笔记编辑界面的选项中，可以选择笔记导出功能。
 
-![](./007.png)
-![](./008.png)
-![](./009.png)
+![](./p/007.png)
+![](./p/008.png)
+![](./p/009.png)
 
 输入文件名后可以选择保存的位置。如果输入为空会出现提示，保存成功后也有提示。
 
-![](./010.png)
-![](./011.png)
-![](./012.png)
+![](./p/010.png)
+![](./p/011.png)
+![](./p/012.png)
 
 
 
